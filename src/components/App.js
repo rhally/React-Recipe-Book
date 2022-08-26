@@ -3,6 +3,8 @@ import RecipeList from "./RecipeList"
 import "../css/app.css"
 import { v4 as uuidv4 } from "uuid"
 import RecipeEdit from "./RecipeEdit"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
 
 export const RecipeContext = React.createContext()
 const LOCAL_STORAGE_KEY = "recipeBook.recipes"
@@ -81,18 +83,24 @@ function App() {
     }
 
     return (
-        <RecipeContext.Provider value={recipeContextValue}>
-            <RecipeList
-                recipes={
-                    filter
-                        ? recipes.filter((recipe) => {
-                              return recipe.name.toLowerCase().includes(filter)
-                          })
-                        : recipes
-                }
-            />
-            {selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
-        </RecipeContext.Provider>
+        <Container fluid>
+            <Row>
+                <RecipeContext.Provider value={recipeContextValue}>
+                    <RecipeList
+                        recipes={
+                            filter
+                                ? recipes.filter((recipe) => {
+                                      return recipe.name
+                                          .toLowerCase()
+                                          .includes(filter)
+                                  })
+                                : recipes
+                        }
+                    />
+                    {selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
+                </RecipeContext.Provider>
+            </Row>
+        </Container>
     )
 }
 
