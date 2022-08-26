@@ -1,5 +1,6 @@
 import React from "react"
 import { Text, StyleSheet, View } from "@react-pdf/renderer"
+import { right } from "@popperjs/core"
 
 export default function RecipeExport(props) {
     const { name, cookTime, servings, instructions, ingredients } = props
@@ -11,19 +12,19 @@ export default function RecipeExport(props) {
             paddingHorizontal: 35,
             fontSize: 14,
         },
+        content: {
+            marginTop: 20,
+            fontSize: 15,
+        },
         title: {
-            fontSize: 14,
             textAlign: "left",
             fontFamily: "Helvetica",
+            fontWeight: 200,
         },
+        ingredients: {},
         text: {
-            fontSize: 14,
             textAlign: "justify",
             fontFamily: "Helvetica",
-        },
-        image: {
-            marginVertical: 15,
-            marginHorizontal: 100,
         },
         header: {
             fontSize: 24,
@@ -32,15 +33,35 @@ export default function RecipeExport(props) {
             textAlign: "center",
             color: "black",
         },
-        pageNumber: {
-            position: "absolute",
-            fontSize: 12,
-            bottom: 30,
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            color: "grey",
-        },
+    })
+
+    const ingredientsContent = ingredients.map(function (ingredient, i) {
+        return (
+            <View
+                key={i}
+                style={[
+                    styles.ingredients,
+                    {
+                        paddingTop: 5,
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        fontSize: 11,
+                    },
+                ]}
+            >
+                <View style={[styles.box, { flexDirection: "column" }]}>
+                    <Text style={[styles.text, {}]}>{ingredient.name}</Text>
+                </View>
+                <View
+                    style={[
+                        styles.box,
+                        { flexDirection: "column", alignItems: "right" },
+                    ]}
+                >
+                    <Text style={[styles.text, {}]}>{ingredient.amount}</Text>
+                </View>
+            </View>
+        )
     })
 
     return (
@@ -57,11 +78,73 @@ export default function RecipeExport(props) {
                         marginBottom: 20,
                     }}
                 >
-                    <Text style={styles.title}>Cook Time</Text>
-                    <Text style={styles.body}>{cookTime}</Text>
+                    <View
+                        style={[
+                            styles.ingredients,
+                            {
+                                fontSize: 13,
+                                flexDirection: "row",
+                                justifyContent: "space-between",
+                            },
+                        ]}
+                    >
+                        <View style={[styles.box, { flexDirection: "column" }]}>
+                            <Text style={[styles.text, {}]}>Cook Time</Text>
+                        </View>
+                        <View
+                            style={[
+                                styles.box,
+                                {
+                                    flexDirection: "column",
+                                    alignItems: "right",
+                                },
+                            ]}
+                        >
+                            <Text style={[styles.text, {}]}>{cookTime}</Text>
+                        </View>
+                    </View>{" "}
+                    <View
+                        style={[
+                            styles.ingredients,
+                            {
+                                fontSize: 13,
+                                flexDirection: "row",
+                                paddingTop: 5,
+                                justifyContent: "space-between",
+                            },
+                        ]}
+                    >
+                        <View style={[styles.box, { flexDirection: "column" }]}>
+                            <Text style={[styles.text, {}]}>Servings</Text>
+                        </View>
+                        <View
+                            style={[
+                                styles.box,
+                                {
+                                    flexDirection: "column",
+                                    alignItems: "right",
+                                },
+                            ]}
+                        >
+                            <Text style={[styles.text, {}]}>{servings}</Text>
+                        </View>
+                    </View>{" "}
+                    <Text
+                        style={[
+                            {
+                                fontSize: 13,
+                                fontWeight: 600,
+                                marginBottom: 10,
+                                marginTop: 30,
+                            },
+                        ]}
+                    >
+                        Ingredients
+                    </Text>
+                    {ingredientsContent}
                 </View>
                 <Text style={styles.title}>Instructions</Text>
-                <Text style={styles.body}>{instructions}</Text>
+                <Text style={styles.content}>{instructions}</Text>
             </View>
         </>
     )
