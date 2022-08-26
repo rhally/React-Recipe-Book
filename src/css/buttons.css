@@ -1,0 +1,44 @@
+.btn {
+    background: none;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: inherit;
+    border-radius: 5px;
+    padding: 5px 20px;
+    cursor: pointer;
+    border: 1px solid grey;
+}
+
+.btn--primary {
+    color: white;
+    background-color: hsl(200, 100%, 50%);
+}
+
+.btn--primary:hover {
+    background-color: hsl(200, 100%, 30%);
+}
+
+.btn--danger {
+    color: white;
+    background-color: hsl(0, 100%, 50%);
+}
+
+.btn--danger:hover {
+    background-color: hsl(0, 100%, 30%);
+}
+
+.btn--download {
+    color: white;
+    text-decoration: none !important;
+    float: right;
+    background-color: hsl(32, 95%, 57%);
+    margin-left: 7px;
+    line-height: 1.4;
+}
+
+.btn--download:hover {
+    color: white;
+    text-decoration: none !important;
+    background-color: hsl(32, 95%, 40%);
+}

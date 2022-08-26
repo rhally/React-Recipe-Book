@@ -1,0 +1,29 @@
+.recipe-list {
+    border-right: 1px solid black;
+    min-height: 100vh;
+    width: 50%;
+}
+
+.recipe-list__search-box-container {
+    display: flex;
+    text-align: center;
+    background: lightblue;
+    padding: 15px;
+    border-bottom: 1px solid black;
+}
+
+.recipe-list__search-box-input {
+    flex-grow: 1;
+    font-size: inherit;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.recipe-list__add-recipe-btn-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
