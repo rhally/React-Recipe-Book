@@ -22,7 +22,7 @@ export default function DownloadButton({ recipes }) {
                 fileName="recipes.pdf"
             >
                 {({ blob, url, loading, error }) =>
-                    loading ? "Loading..." : "Download"
+                    loading ? "Download" : "Download"
                 }
             </PDFDownloadLink>
         </>
