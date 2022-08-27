@@ -12,9 +12,9 @@ export default function RecipeList({ recipes }) {
 
     return (
         <>
-            <Col className="col-lg-6 g-12">
+            <Col bsPrefix="none" className="col-lg-6 g-12">
                 <Row>
-                    <Col className="col-lg-12">
+                    <Col bsPrefix="none" className="col-lg-12">
                         <div className="">
                             <div className="">
                                 <InputGroup className="input-group">

@@ -108,7 +108,7 @@ function App() {
                             }
                         />
 
-                        <Col className="col-sm-6 g-12">
+                        <Col className="col-lg-6 g-0">
                             <Col className="col-lg-12">
                                 {selectedRecipe && (
                                     <RecipeEdit recipe={selectedRecipe} />
