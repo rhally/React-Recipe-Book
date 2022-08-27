@@ -59,6 +59,7 @@ export default function DownloadButton({ recipes }) {
                             style={{
                                 borderBottomLeftRadius: "0px",
                                 borderTopLeftRadius: "0px",
+                                cursor: "pointer",
                             }}
                             className="border-left-0"
                         >
@@ -69,8 +70,8 @@ export default function DownloadButton({ recipes }) {
                             style={{
                                 borderBottomLeftRadius: "0px",
                                 borderTopLeftRadius: "0px",
+                                cursor: "pointer",
                             }}
-                            className="border-left-0"
                         >
                             Download
                         </Button>
