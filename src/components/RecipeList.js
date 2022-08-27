@@ -25,6 +25,12 @@ export default function RecipeList({ recipes }) {
                                             handleRecipeSearch(e.target.value)
                                         }
                                     />
+                                    <Button
+                                        className="btn btn--primary"
+                                        onClick={handleRecipeAdd}
+                                    >
+                                        Add Recipe
+                                    </Button>
                                 </InputGroup>
                             </div>
                         </div>
@@ -34,14 +40,6 @@ export default function RecipeList({ recipes }) {
                             {recipes.map((recipe) => {
                                 return <Recipe key={recipe.id} {...recipe} />
                             })}
-                        </div>
-                        <div className="recipe-list__add-recipe-btn-container">
-                            <Button
-                                className="btn btn--primary"
-                                onClick={handleRecipeAdd}
-                            >
-                                Add Recipe
-                            </Button>
                         </div>
                     </Col>
                 </Row>

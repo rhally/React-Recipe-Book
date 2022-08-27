@@ -68,7 +68,7 @@ function App() {
         }
 
         setSelectedRecipeId(newRecipe.id)
-        setRecipes([...recipes, newRecipe])
+        setRecipes([newRecipe, ...recipes])
     }
 
     function handleRecipeChange(id, recipe) {
