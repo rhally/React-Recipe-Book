@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import RecipeIngredientEdit from "./RecipeIngredientEdit"
 import { RecipeContext } from "./App"
 import { v4 as uuidv4 } from "uuid"
-import Col from "react-bootstrap/Col"
+import Button from "react-bootstrap/Button"
 
 export default function RecipeEdit({ recipe }) {
     const { handleRecipeChange, handleRecipeSelect } = useContext(RecipeContext)
@@ -34,7 +34,7 @@ export default function RecipeEdit({ recipe }) {
     }
 
     return (
-        <Col className="col-md-6 g-0">
+        <>
             <div className="recipe-edit">
                 <div className="recipe-edit__remove-button-container">
                     <button
@@ -117,14 +117,14 @@ export default function RecipeEdit({ recipe }) {
                     ))}
                 </div>
                 <div className="recipe-edit__add-ingredient-btn-container">
-                    <button
+                    <Button
                         className="btn btn--primary"
                         onClick={() => handleIngredientAdd()}
                     >
                         Add Ingredient
-                    </button>
+                    </Button>
                 </div>
             </div>
-        </Col>
+        </>
     )
 }

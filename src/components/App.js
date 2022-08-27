@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from "uuid"
 import RecipeEdit from "./RecipeEdit"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import "bootstrap/dist/css/bootstrap.min.css"
 
 export const RecipeContext = React.createContext()
 const LOCAL_STORAGE_KEY = "recipeBook.recipes"
@@ -83,24 +85,40 @@ function App() {
     }
 
     return (
-        <Container fluid>
-            <Row>
-                <RecipeContext.Provider value={recipeContextValue}>
-                    <RecipeList
-                        recipes={
-                            filter
-                                ? recipes.filter((recipe) => {
-                                      return recipe.name
-                                          .toLowerCase()
-                                          .includes(filter)
-                                  })
-                                : recipes
-                        }
-                    />
-                    {selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
-                </RecipeContext.Provider>
-            </Row>
-        </Container>
+        <>
+            <Container fluid>
+                <h2 class="text-center mt-3">Recipe Book</h2>
+                <div class="text-center mb-5">
+                    Create a new recipe or modify an existing one. Download all
+                    of your recipes in PDF format.
+                </div>
+            </Container>
+            <Container fluid>
+                <Row>
+                    <RecipeContext.Provider value={recipeContextValue}>
+                        <RecipeList
+                            recipes={
+                                filter
+                                    ? recipes.filter((recipe) => {
+                                          return recipe.name
+                                              .toLowerCase()
+                                              .includes(filter)
+                                      })
+                                    : recipes
+                            }
+                        />
+
+                        <Col className="col-sm-6 g-12">
+                            <Col className="col-lg-12">
+                                {selectedRecipe && (
+                                    <RecipeEdit recipe={selectedRecipe} />
+                                )}
+                            </Col>
+                        </Col>
+                    </RecipeContext.Provider>
+                </Row>
+            </Container>
+        </>
     )
 }
 

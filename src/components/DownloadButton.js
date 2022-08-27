@@ -7,6 +7,7 @@ import {
     Document,
     Page,
 } from "@react-pdf/renderer"
+import Button from "react-bootstrap/Button"
 
 export default function DownloadButton({ recipes }) {
     const styles = StyleSheet.create({
@@ -48,12 +49,32 @@ export default function DownloadButton({ recipes }) {
     return (
         <>
             <PDFDownloadLink
-                className="btn btn--download"
+                className=""
                 document={<MyDoc />}
                 fileName="recipes.pdf"
             >
                 {({ blob, url, loading, error }) =>
-                    loading ? "Download" : "Download"
+                    loading ? (
+                        <Button
+                            style={{
+                                borderBottomLeftRadius: "0px",
+                                borderTopLeftRadius: "0px",
+                            }}
+                            className="border-left-0"
+                        >
+                            Download
+                        </Button>
+                    ) : (
+                        <Button
+                            style={{
+                                borderBottomLeftRadius: "0px",
+                                borderTopLeftRadius: "0px",
+                            }}
+                            className="border-left-0"
+                        >
+                            Download
+                        </Button>
+                    )
                 }
             </PDFDownloadLink>
         </>

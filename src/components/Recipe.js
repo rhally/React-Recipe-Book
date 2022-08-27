@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import IngredientList from "./IngredientList"
 import { RecipeContext } from "./App"
+import Button from "react-bootstrap/Button"
 
 export default function Recipe(props) {
     const { handleRecipeDelete, handleRecipeSelect } = useContext(RecipeContext)
@@ -10,18 +11,18 @@ export default function Recipe(props) {
             <div className="recipe__header">
                 <h3 className="recipe__title">{name}</h3>
                 <div>
-                    <button
+                    <Button
                         className="btn btn--primary mr-1"
                         onClick={() => handleRecipeSelect(id)}
                     >
                         Edit
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                         className="btn btn--danger"
                         onClick={() => handleRecipeDelete(id)}
                     >
                         Delete
-                    </button>
+                    </Button>
                 </div>
             </div>
             <div className="recipe__row">

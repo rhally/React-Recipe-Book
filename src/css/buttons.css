@@ -29,16 +29,5 @@
 }
 
 .btn--download {
-    color: white;
-    text-decoration: none !important;
     float: right;
-    background-color: hsl(32, 95%, 57%);
-    margin-left: 7px;
-    line-height: 1.4;
-}
-
-.btn--download:hover {
-    color: white;
-    text-decoration: none !important;
-    background-color: hsl(32, 95%, 40%);
 }
