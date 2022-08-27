@@ -1,5 +1,4 @@
 .recipe {
-
     padding: 20px;
     padding-bottom: 40px;
     border-bottom: 1px solid black;
@@ -13,7 +12,6 @@
 .recipe__header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 30px;
 }
 
@@ -23,7 +21,7 @@
 }
 
 .recipe__row {
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 .recipe__label {
@@ -42,4 +40,3 @@
 .recipe__instructions {
     white-space: pre-wrap;
 }
-

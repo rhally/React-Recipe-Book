@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 import Recipe from "./Recipe"
 import { RecipeContext } from "./App"
-import DownloadButton from "./DownloadButton"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 import Button from "react-bootstrap/Button"
@@ -12,7 +11,7 @@ export default function RecipeList({ recipes }) {
 
     return (
         <>
-            <Col bsPrefix="none" className="col-lg-6 g-12">
+            <Col role="main" bsPrefix="none" className="col-lg-6 g-12">
                 <Row>
                     <Col bsPrefix="none" className="col-lg-12">
                         <div className="">
@@ -26,7 +25,6 @@ export default function RecipeList({ recipes }) {
                                             handleRecipeSearch(e.target.value)
                                         }
                                     />
-                                    <DownloadButton recipes={recipes} />
                                 </InputGroup>
                             </div>
                         </div>

@@ -1,6 +1,5 @@
 import React from "react"
 import { Text, StyleSheet, View } from "@react-pdf/renderer"
-import { right } from "@popperjs/core"
 
 export default function RecipeExport(props) {
     const { name, cookTime, servings, instructions, ingredients } = props

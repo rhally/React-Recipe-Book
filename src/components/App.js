@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import "bootstrap/dist/css/bootstrap.min.css"
+import DownloadButton from "./DownloadButton"
 
 export const RecipeContext = React.createContext()
 const LOCAL_STORAGE_KEY = "recipeBook.recipes"
@@ -87,10 +88,21 @@ function App() {
     return (
         <>
             <Container fluid>
-                <h2 class="text-center mt-3">Recipe Book</h2>
-                <div class="text-center mb-5">
-                    Create a new recipe or modify an existing one. Download all
-                    of your recipes in PDF format.
+                <div className="container-xxl bd-gutter">
+                    <div className="col-md-8 mx-auto text-center">
+                        <h1 class="text-center mt-3 mb-3 fw-semibold styled-header-text">
+                            Recipe Book
+                        </h1>
+                        <p class="text-center lead mb-5">
+                            Create a new recipe or modify an existing one.
+                            Flavour your recipes with new ingredients and
+                            instructions. Download all of your recipes in PDF
+                            format.
+                        </p>
+                        <div className="mb-5">
+                            <DownloadButton recipes={recipes} />
+                        </div>
+                    </div>
                 </div>
             </Container>
             <Container fluid>

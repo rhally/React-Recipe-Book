@@ -52,30 +52,15 @@ export default function DownloadButton({ recipes }) {
                 className=""
                 document={<MyDoc />}
                 fileName="recipes.pdf"
-                style={{
-                    cursor: "pointer",
-                }}
+                style={{}}
             >
                 {({ blob, url, loading, error }) =>
                     loading ? (
-                        <Button
-                            style={{
-                                borderBottomLeftRadius: "0px",
-                                borderTopLeftRadius: "0px",
-                                cursor: "pointer",
-                            }}
-                            className="border-left-0"
-                        >
+                        <Button className="btn btn-download" style={{}}>
                             Download
                         </Button>
                     ) : (
-                        <Button
-                            style={{
-                                borderBottomLeftRadius: "0px",
-                                borderTopLeftRadius: "0px",
-                                cursor: "pointer",
-                            }}
-                        >
+                        <Button className="btn btn-download" style={{}}>
                             Download
                         </Button>
                     )

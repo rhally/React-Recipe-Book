@@ -28,6 +28,23 @@
     background-color: hsl(0, 100%, 30%);
 }
 
-.btn--download {
-    float: right;
+.btn.btn-download {
+    color: #ffffff;
+    background-color: hsl(333deg 100% 55%);
+    border-width: 0px;
+    transition: all 0.5s ease;
+    transform: scale(1);
+}
+
+.btn.btn-download:hover,
+.btn.btn-download:focus,
+.btn.btn-download:active,
+.btn.btn-download.active {
+    color: #ffffff;
+    background-color: hsl(333deg 100% 55%);
+    transform: scale(1.25);
+    border-width: 0px;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    transition: all 0.25s ease;
 }
