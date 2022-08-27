@@ -44,16 +44,8 @@ function App() {
         handleRecipeSearch,
     }
 
-    function smoothScroll(target) {
-        window.scroll({
-            top: target.offsetTop,
-            behavior: "smooth",
-        })
-    }
-
     function handleRecipeSelect(id) {
         setSelectedRecipeId(id)
-        smoothScroll(document.getElementById("recipe-" + id))
     }
 
     function handleRecipeSearch(value) {
@@ -134,7 +126,7 @@ function App() {
                                     <RecipeEdit recipe={selectedRecipe} />
                                 ) : (
                                     <>
-                                        <p className="text-center text-muted">
+                                        <p className="text-center text-muted fst-italic">
                                             Create a new recipe or modify an
                                             existing one.
                                         </p>
