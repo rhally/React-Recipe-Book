@@ -39,15 +39,17 @@ export default function RecipeEdit({ recipe }) {
                 <div className="recipe-edit__remove-button-container">
                     <button
                         type="button"
-                        class="close"
                         aria-label="Close"
-                        className="btn recipe-edit__remove-button"
+                        className="btn close recipe-edit__remove-button"
                         onClick={() => handleRecipeSelect(undefined)}
                     >
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div className="recipe-edit__details-grid">
+                <div
+                    id={"recipe-" + recipe.id}
+                    className="recipe-edit__details-grid"
+                >
                     <label htmlFor="name" className="recipe-edit__label">
                         Name
                     </label>
@@ -58,7 +60,7 @@ export default function RecipeEdit({ recipe }) {
                         value={recipe.name}
                         onChange={(e) => handleChange({ name: e.target.value })}
                         className="recipe-edit__input"
-                        autofocus
+                        autoFocus
                     />
                     <label htmlFor="cookTime" className="recipe-edit__label">
                         Cook Time

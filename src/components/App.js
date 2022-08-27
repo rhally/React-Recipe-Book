@@ -44,8 +44,16 @@ function App() {
         handleRecipeSearch,
     }
 
+    function smoothScroll(target) {
+        window.scroll({
+            top: target.offsetTop,
+            behavior: "smooth",
+        })
+    }
+
     function handleRecipeSelect(id) {
         setSelectedRecipeId(id)
+        smoothScroll(document.getElementById("recipe-" + id))
     }
 
     function handleRecipeSearch(value) {
@@ -90,10 +98,10 @@ function App() {
             <Container fluid>
                 <div className="container-xxl bd-gutter">
                     <div className="col-md-8 mx-auto text-center">
-                        <h1 class="text-center mt-3 mb-3 fw-semibold styled-header-text">
+                        <h1 className="text-center mt-3 mb-3 fw-semibold styled-header-text">
                             Recipe Book
                         </h1>
-                        <p class="text-center lead mb-5">
+                        <p className="text-center lead mb-5">
                             Create a new recipe or modify an existing one.
                             Flavour your recipes with new ingredients and
                             instructions. Download all of your recipes in PDF
@@ -126,7 +134,7 @@ function App() {
                                     <RecipeEdit recipe={selectedRecipe} />
                                 ) : (
                                     <>
-                                        <p class="text-center text-muted">
+                                        <p className="text-center text-muted">
                                             Create a new recipe or modify an
                                             existing one.
                                         </p>
