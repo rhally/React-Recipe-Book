@@ -52,6 +52,9 @@ export default function DownloadButton({ recipes }) {
                 className=""
                 document={<MyDoc />}
                 fileName="recipes.pdf"
+                style={{
+                    cursor: "pointer",
+                }}
             >
                 {({ blob, url, loading, error }) =>
                     loading ? (
