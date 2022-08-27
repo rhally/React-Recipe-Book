@@ -122,8 +122,15 @@ function App() {
 
                         <Col className="col-lg-6 g-0">
                             <Col className="col-lg-12">
-                                {selectedRecipe && (
+                                {selectedRecipe ? (
                                     <RecipeEdit recipe={selectedRecipe} />
+                                ) : (
+                                    <>
+                                        <p class="text-center text-muted">
+                                            Create a new recipe or modify an
+                                            existing one.
+                                        </p>
+                                    </>
                                 )}
                             </Col>
                         </Col>
